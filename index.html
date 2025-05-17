@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -94,7 +93,7 @@
       font-size: 0.9rem;
       color: #0ff;
     }
-  
+
     .top-banner {
       width: 100%;
       max-width: 362px;
@@ -105,7 +104,7 @@
       background-position: center;
       border-radius: 10px;
     }
-    </style>
+  </style>
 </head>
 <body>
   <div class="container">
@@ -159,7 +158,7 @@
 
     <div class="tab">
         <h2>📢 Promover Canal</h2>
-        <p>• Tellegram no permite verificar miembros en canales.</p>
+        <p>• Telegram no permite verificar miembros en canales.</p>
         <p>• El sistema confía en que el usuario se haya unido.</p>
         <p>• Funciona igual, pero sin verificación.</p>
     </div>
@@ -168,7 +167,7 @@
         <h2>💰 Pagos y Respaldo</h2>
         <p>• Al crear la tarea, tu HCASH se mueve al <span class="tag">respaldo</span> para asegurar la solvencia de tu oferta.</p>
         <p>• Se descuenta el pago de tu <span class="tag">respaldo</span> solo cuando se completa la tarea.</p>
-        <p>• Puedes cancelar y recuperar lo que no se haya usado en  cualquier momento, no hay bloqueo de balance.</p>
+        <p>• Puedes cancelar y recuperar lo que no se haya usado en cualquier momento, no hay bloqueo de balance.</p>
         <p>• Si cancelas la tarea tu balance de <span class="tag">respaldo</span> regresa a tu balance principal.</p>
     </div>
 
@@ -187,16 +186,18 @@
   </div>
 
   <script>
-    fetch("http://localhost:8000/user-stats?memo=UQ63AH")
+    const memo = Telegram.WebApp.initDataUnsafe?.user?.id || "UQ63AH";
+
+    fetch(`https://h-wallet-api.vercel.app/user-stats?memo=${memo}`)
       .then(res => res.json())
       .then(data => {
-        document.getElementById("hcash").textContent = data.hcash;
-        document.getElementById("ton").textContent = data.ton;
-        document.getElementById("tareas").textContent = data.tareas;
-        document.getElementById("servicios").textContent = data.servicios;
-        document.getElementById("respaldo").textContent = data.respaldo;
+        document.getElementById("hcash").textContent = data.hcash?.toFixed(2) || "0.00";
+        document.getElementById("ton").textContent = data.ton?.toFixed(2) || "0.00";
+        document.getElementById("respaldo").textContent = data.respaldo?.toFixed(2) || "0.00";
+        document.getElementById("tareas").textContent = data.tareas_completadas || 0;
+        document.getElementById("servicios").textContent = data.servicios_activos || 0;
       })
-      .catch(() => alert("Error al conectar con el backend"));
+      .catch(() => alert("❌ Error al conectar con el backend."));
   </script>
 </body>
 </html>
