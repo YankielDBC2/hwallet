@@ -2,67 +2,83 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Estadísticas del Usuario</title>
-  <meta name="description" content="Visualiza tu progreso y recompensas en HWallet Bot">
-  <link rel="icon" href="https://em-content.zobj.net/thumbs/120/twitter/322/chart-increasing_1f4c8.png" />
-  <style>
-    body {
-      font-family: system-ui, sans-serif;
-      background: #0f0f0f;
-      color: #f1f1f1;
-      padding: 1.2rem;
-      margin: 0;
-    }
-    h1 {
-      text-align: center;
-      color: #00ffa2;
-      font-size: 1.8rem;
-      margin-bottom: 1.2rem;
-    }
-    .card {
-      background: #1a1a1a;
-      border-radius: 10px;
-      padding: 1rem;
-      margin-bottom: 1.2rem;
-      box-shadow: 0 0 5px rgba(0, 255, 255, 0.1);
-    }
-    .card h2 {
-      color: #0ff;
-      margin-bottom: 0.5rem;
-      font-size: 1.2rem;
-    }
-    .card p {
-      margin: 0.3rem 0;
-    }
-    .highlight {
-      color: #00ffa2;
-      font-weight: bold;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guía de Servicios</title>
+    <meta name="description" content="Aprende a usar el sistema de tareas y promoción de Space Hunters Bot">
+    <link rel="icon" href="https://em-content.zobj.net/thumbs/120/twitter/322/books_1f4da.png" />
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            background-color: #0f0f0f;
+            color: #f1f1f1;
+            padding: 1rem;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        .tab {
+            background: #1a1a1a;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            padding: 1rem;
+        }
+        .tab h2 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #00ffa2;
+        }
+        .tab p {
+            margin: 0.3rem 0;
+        }
+        .tag {
+            display: inline-block;
+            background: #333;
+            padding: 0.2rem 0.6rem;
+            margin: 0.2rem 0;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            color: #0ff;
+        }
+    </style>
 </head>
 <body>
-  <h1>📊 Tus Estadísticas</h1>
+    <h1>📘 Guía de Servicios</h1>
 
-  <div class="card">
-    <h2>🧍 Perfil</h2>
-    <p>Memo: <span class="highlight">UQ63AH</span></p>
-    <p>Usuario: <span class="highlight">@usuario</span></p>
-  </div>
+    <div class="tab">
+        <h2>🎯 Promover Grupo</h2>
+        <p>• Los usuarios deben unirse a tu grupo.</p>
+        <p>• El bot verifica si realmente se unieron.</p>
+        <p>• Solo pagas cuando se cumple.</p>
+    </div>
 
-  <div class="card">
-    <h2>💰 Saldos</h2>
-    <p>HCASH: <span class="highlight">9986.79</span></p>
-    <p>TON: <span class="highlight">7.99</span></p>
-    <p>Respaldo: <span class="highlight">0.00</span></p>
-  </div>
+    <div class="tab">
+        <h2>📢 Promover Canal</h2>
+        <p>• El bot no puede verificar membresía en canales.</p>
+        <p>• El sistema confía en que el usuario se haya unido.</p>
+        <p>• Funciona igual, pero sin verificación.</p>
+    </div>
 
-  <div class="card">
-    <h2>✅ Progreso</h2>
-    <p>Tareas completadas: <span class="highlight">3</span></p>
-    <p>Servicios creados: <span class="highlight">2</span></p>
-    <p>Recompensas recibidas: <span class="highlight">+340 HCASH</span></p>
-  </div>
+    <div class="tab">
+        <h2>💰 Pagos y Respaldo</h2>
+        <p>• Al crear la tarea, tu HCASH se mueve al <span class="tag">respaldo</span>.</p>
+        <p>• Se descuenta solo cuando se completa una acción.</p>
+        <p>• Puedes cancelar y recuperar lo que no se haya usado.</p>
+    </div>
+
+    <div class="tab">
+        <h2>📊 Servicios Activos</h2>
+        <p>• Puedes ver:</p>
+        <p>   - Miembros completados</p>
+        <p>   - Saldo usado vs total</p>
+        <p>   - Saldo restante en respaldo</p>
+    </div>
+
+    <div class="tab">
+        <h2>🛠️ Cómo empezar</h2>
+        <p>Ve al menú <b>“Servicios”</b> en el bot y elige lo que quieres promover.</p>
+    </div>
 </body>
 </html>
