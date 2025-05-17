@@ -2,83 +2,122 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Guía de Servicios</title>
-    <meta name="description" content="Aprende a usar el sistema de tareas y promoción de Space Hunters Bot">
-    <link rel="icon" href="https://em-content.zobj.net/thumbs/120/twitter/322/books_1f4da.png" />
-    <style>
-        body {
-            font-family: system-ui, sans-serif;
-            background-color: #0f0f0f;
-            color: #f1f1f1;
-            padding: 1rem;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-        }
-        .tab {
-            background: #1a1a1a;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            padding: 1rem;
-        }
-        .tab h2 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: #00ffa2;
-        }
-        .tab p {
-            margin: 0.3rem 0;
-        }
-        .tag {
-            display: inline-block;
-            background: #333;
-            padding: 0.2rem 0.6rem;
-            margin: 0.2rem 0;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            color: #0ff;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HWallet Dashboard</title>
+  <style>
+    body {
+      background-color: #0B1224;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 1.5rem;
+    }
+    .container {
+      max-width: 480px;
+      margin: auto;
+    }
+    .balance-box {
+      display: flex;
+      justify-content: space-between;
+      background: #111c3c;
+      border: 1px solid #0ff;
+      border-radius: 12px;
+      padding: 1.5rem 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .token {
+      text-align: center;
+      flex: 1;
+    }
+    .token img {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 0.5rem;
+    }
+    .token-value {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #ffffff;
+    }
+    .token-label {
+      color: #00ffe7;
+      font-size: 0.9rem;
+    }
+    .section {
+      background-color: #101b36;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-left: 3px solid #0ff;
+    }
+    .section span {
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    .section .icon {
+      margin-right: 0.7rem;
+    }
+    .section-title {
+      display: flex;
+      align-items: center;
+    }
+  </style>
 </head>
 <body>
-    <h1>📘 Guía de Servicios</h1>
-
-    <div class="tab">
-        <h2>🎯 Promover Grupo</h2>
-        <p>• Los usuarios deben unirse a tu grupo.</p>
-        <p>• El bot verifica si realmente se unieron.</p>
-        <p>• Solo pagas cuando se cumple.</p>
+  <div class="container">
+    <div class="balance-box">
+      <div class="token">
+        <img src="https://i.imgur.com/v5FWIQm.png" alt="HCASH" />
+        <div class="token-value" id="hcash">--</div>
+        <div class="token-label">HCASH</div>
+      </div>
+      <div class="token">
+        <img src="https://i.imgur.com/vUrBUhD.png" alt="TON" />
+        <div class="token-value" id="ton">--</div>
+        <div class="token-label">TON</div>
+      </div>
     </div>
 
-    <div class="tab">
-        <h2>📢 Promover Canal</h2>
-        <p>• El bot no puede verificar membresía en canales.</p>
-        <p>• El sistema confía en que el usuario se haya unido.</p>
-        <p>• Funciona igual, pero sin verificación.</p>
+    <div class="section">
+      <div class="section-title">
+        <div class="icon">✅</div>
+        <span>Tareas Completadas</span>
+      </div>
+      <span id="tareas">--</span>
     </div>
 
-    <div class="tab">
-        <h2>💰 Pagos y Respaldo</h2>
-        <p>• Al crear la tarea, tu HCASH se mueve al <span class="tag">respaldo</span>.</p>
-        <p>• Se descuenta solo cuando se completa una acción.</p>
-        <p>• Puedes cancelar y recuperar lo que no se haya usado.</p>
+    <div class="section">
+      <div class="section-title">
+        <div class="icon">📋</div>
+        <span>Servicios Activos</span>
+      </div>
+      <span id="servicios">--</span>
     </div>
 
-    <div class="tab">
-        <h2>📊 Servicios Activos</h2>
-        <p>• Puedes ver:</p>
-        <p>   - Miembros completados</p>
-        <p>   - Saldo usado vs total</p>
-        <p>   - Saldo restante en respaldo</p>
+    <div class="section">
+      <div class="section-title">
+        <div class="icon">💠</div>
+        <span>Balance de Respaldo</span>
+      </div>
+      <span id="respaldo">--</span>
     </div>
+  </div>
 
-    <div class="tab">
-        <h2>🛠️ Cómo empezar</h2>
-        <p>Ve al menú <b>“Servicios”</b> en el bot y elige lo que quieres promover.</p>
-    </div>
+  <script>
+    fetch("http://localhost:8000/user-stats?memo=UQ63AH")
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("hcash").textContent = data.hcash;
+        document.getElementById("ton").textContent = data.ton;
+        document.getElementById("tareas").textContent = data.tareas;
+        document.getElementById("servicios").textContent = data.servicios;
+        document.getElementById("respaldo").textContent = data.respaldo;
+      })
+      .catch(() => alert("Error al conectar con el backend"));
+  </script>
 </body>
 </html>
