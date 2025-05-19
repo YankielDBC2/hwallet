@@ -1,8 +1,7 @@
 {
-  "name": "HWallet Bot",
-  "url": "https://tu-sitio-o-repo.github.io",  // ← cambia esto a tu dominio real
-  "iconUrl": "https://tu-sitio-o-repo.github.io/icon.png",  // opcional, logo visible en la wallet
-  "termsUrl": "https://tu-sitio-o-repo.github.io/terms",    // opcional
-  "privacyPolicyUrl": "https://tu-sitio-o-repo.github.io/privacy", // opcional
-  "tonconnectVersion": "2.0"
+  "url": "https://t.me/HWalletBot",
+  "name": "HWallet",
+  "iconUrl": "https://raw.githubusercontent.com/YankielDBC2/hwallet/main/icon.png",
+  "termsOfUseUrl": "https://t.me/HWalletBot",
+  "privacyPolicyUrl": "https://t.me/HWalletBot"
 }
