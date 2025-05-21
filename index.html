@@ -3,201 +3,69 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>HWallet</title>
+  <title>Guía de HWallet</title>
   <style>
     body {
       background-color: #0B1224;
       color: white;
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 1.5rem;
+      padding: 2rem 1.5rem;
+      max-width: 700px;
+      margin-inline: auto;
     }
-    .container {
-      max-width: 480px;
-      margin: auto;
-    }
-    .balance-box {
-      display: flex;
-      justify-content: space-between;
-      background: #111c3c;
-      border: 1px solid #0ff;
-      border-radius: 12px;
-      padding: 1.5rem 1rem;
-      margin-bottom: 1.5rem;
-    }
-    .token {
-      text-align: center;
-      flex: 1;
-    }
-    .token img {
-      width: 48px;
-      height: 48px;
-      margin-bottom: 0.5rem;
-    }
-    .token-value {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: #ffffff;
-    }
-    .token-label {
-      color: #00ffe7;
-      font-size: 0.9rem;
-    }
-    .section {
-      background-color: #101b36;
-      border-radius: 12px;
-      margin-bottom: 1rem;
-      padding: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-left: 3px solid #0ff;
-    }
-    .section span {
-      font-weight: bold;
-      font-size: 1rem;
-    }
-    .section .icon {
-      margin-right: 0.7rem;
-    }
-    .section-title {
-      display: flex;
-      align-items: center;
-    }
-
     h1 {
       text-align: center;
-      margin: 2rem auto 1rem;
-      font-size: 1.8rem;
-    }
-    .tab {
-      background: #1a1a1a;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-      padding: 1rem;
-    }
-    .tab h2 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
+      font-size: 2rem;
       color: #00ffa2;
+      margin-bottom: 2rem;
     }
-    .tab p {
-      margin: 0.3rem 0;
+    h2 {
+      font-size: 1.4rem;
+      color: #00ffe7;
+      margin-top: 1.8rem;
+    }
+    p {
+      margin: 0.5rem 0;
+      line-height: 1.5;
     }
     .tag {
       display: inline-block;
       background: #333;
       padding: 0.2rem 0.6rem;
-      margin: 0.2rem 0;
       border-radius: 5px;
       font-size: 0.9rem;
       color: #0ff;
     }
-
-    .top-banner {
-      width: 100%;
-      max-width: 362px;
-      height: 84px;
-      margin: 0 auto 1.5rem;
-      background-image: url('/Rectangle 42311.jpg');
-      background-size: cover;
-      background-position: center;
-      border-radius: 10px;
-    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="top-banner"></div>
-    <div class="balance-box">
-      <div class="token">
-        <img src="/HCASH.png" alt="HCASH" />
-        <div class="token-value" id="hcash">--</div>
-        <div class="token-label">HCASH</div>
-      </div>
-      <div class="token">
-        <img src="/TON.png" alt="TON" />
-        <div class="token-value" id="ton">--</div>
-        <div class="token-label">TON</div>
-      </div>
-    </div>
+  <h1>📘 Guía de HWallet</h1>
 
-    <div class="section">
-      <div class="section-title">
-        <div class="icon">✅</div>
-        <span>Tareas Completadas</span>
-      </div>
-      <span id="tareas">--</span>
-    </div>
+  <p>Bienvenido a HWallet, una herramienta para promocionar grupos reales en Telegram mediante tareas pagadas con <b>$HCASH</b>. Aquí aprenderás cómo funciona el sistema.</p>
 
-    <div class="section">
-      <div class="section-title">
-        <div class="icon">📋</div>
-        <span>Servicios Activos</span>
-      </div>
-      <span id="servicios">--</span>
-    </div>
+  <h2>🎯 Promover Grupos</h2>
+  <p>• Los usuarios deben unirse a tu grupo para recibir su recompensa.</p>
+  <p>• Debes agregar a <b>@myhunterwalletbot</b> como administrador del grupo para que pueda verificar las uniones.</p>
+  <p>• Solo pagas cuando un usuario realmente se une.</p>
+  <p>• La verificación es automática y segura.</p>
 
-    <div class="section">
-      <div class="section-title">
-        <div class="icon">💠</div>
-        <span>Balance de Respaldo</span>
-      </div>
-      <span id="respaldo">--</span>
-    </div>
+  <h2>💰 Pagos y Respaldo</h2>
+  <p>• Al crear una tarea, tu saldo en <b>$HCASH</b> pasa al <span class="tag">respaldo</span> para garantizar los pagos.</p>
+  <p>• Se descuenta el pago solo cuando la tarea se completa.</p>
+  <p>• Puedes cancelar la tarea en cualquier momento.</p>
+  <p>• Si cancelas, el saldo restante del <span class="tag">respaldo</span> regresa a tu balance principal.</p>
 
-    <h1>📘 HWallet Guía</h1>
-    <h3>Modelo de marketing orgánico y real, usuarios reales y/o clientes potenciales.</h3>
-    <div class="tab">
-        <h2>🎯 Promover Grupo</h2>
-        <p>• Los usuarios deben unirse a tu grupo.</p>
-        <p>• Debes agregar a @myhunterwalletbot tu grupo como admin para poder verificar que los usuarios se unieron.</p>
-        <p>• El bot verifica si realmente se unieron antes de pagar.</p>
-        <p>• Solo pagas cuando se cumple.</p>
-    </div>
+  <h2>📊 Servicios Activos</h2>
+  <p>• Podrás ver:</p>
+  <p>   - Cuántos usuarios se han unido</p>
+  <p>   - Cuánto saldo se ha usado</p>
+  <p>   - Cuánto queda en tu respaldo</p>
 
-    <div class="tab">
-        <h2>📢 Promover Canal</h2>
-        <p>• Telegram no permite verificar miembros en canales.</p>
-        <p>• El sistema confía en que el usuario se haya unido.</p>
-        <p>• Funciona igual, pero sin verificación.</p>
-    </div>
+  <h2>🛠️ Cómo Empezar</h2>
+  <p>• Abre el bot y ve al menú <b>“Servicios”</b>.</p>
+  <p>• Selecciona <b>“Promocionar Grupo”</b> y sigue los pasos.</p>
+  <p>• Tu tarea estará disponible en el tablero público.</p>
 
-    <div class="tab">
-        <h2>💰 Pagos y Respaldo</h2>
-        <p>• Al crear la tarea, tu HCASH se mueve al <span class="tag">respaldo</span> para asegurar la solvencia de tu oferta.</p>
-        <p>• Se descuenta el pago de tu <span class="tag">respaldo</span> solo cuando se completa la tarea.</p>
-        <p>• Puedes cancelar y recuperar lo que no se haya usado en cualquier momento, no hay bloqueo de balance.</p>
-        <p>• Si cancelas la tarea tu balance de <span class="tag">respaldo</span> regresa a tu balance principal.</p>
-    </div>
-
-    <div class="tab">
-        <h2>📊 Servicios Activos</h2>
-        <p>• Puedes ver:</p>
-        <p>   - Cuantos miembros reales se unieron en tus tareas</p>
-        <p>   - Saldo usado vs total</p>
-        <p>   - Saldo restante en respaldo</p>
-    </div>
-
-    <div class="tab">
-        <h2>🛠️ Cómo empezar</h2>
-        <p>Ve al menú <b>“Servicios”</b> en el bot y elige lo que quieres promover.</p>
-    </div>
-  </div>
-
-  <script>
-    const memo = Telegram.WebApp.initDataUnsafe?.user?.id || "UQ63AH";
-
-    fetch(`https://h-wallet-api.vercel.app/user-stats?memo=${memo}`)
-      .then(res => res.json())
-      .then(data => {
-        document.getElementById("hcash").textContent = data.hcash?.toFixed(2) || "0.00";
-        document.getElementById("ton").textContent = data.ton?.toFixed(2) || "0.00";
-        document.getElementById("respaldo").textContent = data.respaldo?.toFixed(2) || "0.00";
-        document.getElementById("tareas").textContent = data.tareas_completadas || 0;
-        document.getElementById("servicios").textContent = data.servicios_activos || 0;
-      })
-      .catch(() => alert("❌ Error al conectar con el backend."));
-  </script>
 </body>
 </html>
