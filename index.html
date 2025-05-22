@@ -11,45 +11,26 @@
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 2rem 1.5rem;
-      max-width: 880px;
+      max-width: 800px;
       margin-inline: auto;
-    }
-    h1, h2, h3 {
-      color: #00ffa2;
     }
     h1 {
       text-align: center;
-      font-size: 2.2rem;
+      font-size: 2rem;
+      color: #00ffa2;
+      margin-bottom: 2rem;
     }
     h2 {
-      font-size: 1.6rem;
-      margin-top: 2.5rem;
-    }
-    h3 {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       color: #00ffe7;
-      margin-top: 1.5rem;
+      margin-top: 2rem;
     }
-    p, li {
-      line-height: 1.6;
+    p {
+      margin: 0.5rem 0;
+      line-height: 1.5;
     }
     ul {
       padding-left: 1.5rem;
-    }
-    a {
-      color: #00eaff;
-      text-decoration: none;
-    }
-    nav {
-      background: #10172B;
-      padding: 1rem;
-      border-radius: 10px;
-      margin-bottom: 2rem;
-    }
-    nav a {
-      display: inline-block;
-      margin: 0.3rem 0.7rem;
-      font-weight: bold;
     }
     .tag {
       display: inline-block;
@@ -59,103 +40,136 @@
       font-size: 0.9rem;
       color: #0ff;
     }
+    a {
+      color: #00ffe7;
+      text-decoration: underline;
+    }
+    nav {
+      background: #111b36;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+    nav ul li {
+      margin-bottom: 0.5rem;
+    }
   </style>
 </head>
 <body>
-
   <h1>📘 Guía de HWallet</h1>
 
   <nav>
-    <a href="#que-es">Qué es</a>
-    <a href="#como-enviar">Enviar dinero</a>
-    <a href="#crear-tarea">Crear tarea</a>
-    <a href="#completar-tarea">Completar tarea</a>
-    <a href="#perfil">Perfil</a>
-    <a href="#retiros">Retiros</a>
-    <a href="#comandos">Comandos</a>
-    <a href="#referidos">Referidos</a>
-    <a href="#soporte">Soporte</a>
+    <h2>📑 Índice</h2>
+    <ul>
+      <li><a href="#que-es">🔐 ¿Qué es HWallet?</a></li>
+      <li><a href="#enviar-dinero">⚙️ Cómo enviar dinero</a></li>
+      <li><a href="#crear-tareas">🛠️ Crear tareas de promoción</a></li>
+      <li><a href="#completar-tareas">✅ Completar tareas y ganar</a></li>
+      <li><a href="#perfil">🧾 ¿Qué contiene tu perfil?</a></li>
+      <li><a href="#retiros">💵 Retiros y depósitos</a></li>
+      <li><a href="#referidos">👥 Sistema de referidos</a></li>
+      <li><a href="#soporte">📬 Soporte directo</a></li>
+      <li><a href="#especial">💡 ¿Qué hace especial a HWallet?</a></li>
+      <li><a href="#futuro">🚀 ¿Qué sigue?</a></li>
+    </ul>
   </nav>
 
   <h2 id="que-es">🔐 ¿Qué es HWallet?</h2>
   <p>HWallet es una wallet virtual en $HCASH y TON que permite:</p>
   <ul>
-    <li>Transferencias entre usuarios sin comisiones internas</li>
-    <li>Creación de tareas de promoción</li>
-    <li>Ganancias reales al participar en tareas</li>
-    <li>Autogestión total sin admins ni terceros</li>
+    <li>Transferencias internas sin comisiones</li>
+    <li>Crear tareas promocionales para grupos</li>
+    <li>Ganar dinero por participar en misiones</li>
+    <li>Retirar y depositar con respaldo en blockchain</li>
   </ul>
 
-  <h2 id="como-enviar">⚙️ Enviar dinero</h2>
-  <p>Usa el comando <code>hh</code> para transferencias rápidas:</p>
+  <h2 id="enviar-dinero">⚙️ Cómo enviar dinero</h2>
   <ul>
-    <li><code>hh 2 hcash @usuario</code> — envía 2 HCASH</li>
+    <li><code>hh 2 hcash @usuario</code> – envía 2 HCASH a @usuario</li>
     <li>Responde a un mensaje y escribe <code>hh 3 hcash</code></li>
-    <li>Funciona también con TON (<code>hh 1 ton</code>)</li>
+    <li>Los mensajes se autodestruyen tras 15 segundos</li>
   </ul>
 
-  <h2 id="crear-tarea">🛠️ Crear tareas de promoción</h2>
+  <h2 id="crear-tareas">🛠️ Crear tareas de promoción</h2>
+  <p>Puedes crear tareas desde el menú <b>Servicios</b>. El bot te guiará paso a paso:</p>
   <ol>
-    <li>Presiona el botón <b>Servicios</b> y elige <b>Promover Grupo</b></li>
-    <li>Escribe el nombre de tu tarea</li>
-    <li>Envía el link del grupo o canal</li>
-    <li>Define la recompensa por usuario</li>
-    <li>Indica la cantidad deseada de usuarios</li>
-    <li>Confirma y publica tu tarea</li>
+    <li>Escribe un título para tu tarea</li>
+    <li>Proporciona el link de tu grupo o canal</li>
+    <li>Define la recompensa por cada usuario que se una</li>
+    <li>Establece la cantidad total de usuarios deseados</li>
   </ol>
-  <p>Solo pagarás si los usuarios cumplen la acción.</p>
-
-  <h2 id="completar-tarea">📲 Completar tareas</h2>
-  <ol>
-    <li>Ve a <b>Servicios</b> → <b>Tareas disponibles</b></li>
-    <li>Elige una y haz clic en el link</li>
-    <li>Una vez te unas, presiona <b>✅ Ya me uní</b></li>
-    <li>El bot validará automáticamente y te pagará</li>
-  </ol>
-
-  <h2 id="perfil">🧾 Tu perfil</h2>
+  <p>La tarea se activa automáticamente y:</p>
   <ul>
-    <li>Saldo en HCASH y TON</li>
-    <li>Respaldo bloqueado en tareas</li>
-    <li>Tareas completadas</li>
-    <li>Tareas activas como creador</li>
-    <li>Tu ID de usuario</li>
+    <li>El bot verifica que los usuarios se unan realmente</li>
+    <li>Solo se paga si se cumple la condición</li>
+    <li>El creador debe tener saldo suficiente</li>
+    <li>Se cobra <b>1 HCASH</b> como comisión fija por tarea</li>
+    <li>Los fondos se reservan como <b>respaldo</b> hasta que se pague cada acción</li>
+    <li>Puedes cancelar la tarea en cualquier momento y el respaldo no usado se devuelve</li>
+  </ul>
+
+  <h2 id="completar-tareas">✅ Completar tareas y ganar</h2>
+  <p>Para ganar HCASH, ve al <b>Tablero de Tareas</b> y:</p>
+  <ol>
+    <li>Selecciona una tarea activa</li>
+    <li>Haz clic en el botón para unirte</li>
+    <li>Una vez dentro, presiona <b>Ya me uní</b></li>
+    <li>El bot verificará automáticamente si estás en el grupo</li>
+  </ol>
+  <p>Si se confirma, recibes la recompensa en tu balance. ¡Simple, rápido y sin trampas!</p>
+
+  <h2 id="perfil">🧾 ¿Qué contiene tu perfil?</h2>
+  <ul>
+    <li><b>Saldo en HCASH</b>: disponible para tareas o retiros</li>
+    <li><b>TON</b>: usado para cubrir comisiones al retirar</li>
+    <li><b>Respaldo</b>: HCASH bloqueado en tareas activas</li>
+    <li><b>Servicios activos</b>: tareas que creaste</li>
+    <li><b>Tareas completadas</b>: cantidad e historial</li>
+    <li><b>Comisiones pagadas</b>: transparencia total</li>
+    <li><b>ID único</b>: para registro en blockchain</li>
   </ul>
 
   <h2 id="retiros">💵 Retiros y depósitos</h2>
   <ul>
-    <li>Usa el botón <b>Depositar</b> y sigue instrucciones</li>
-    <li>Recuerda incluir tu memo al depositar</li>
-    <li>Para retirar, el bot te pedirá la dirección</li>
-    <li>Requiere saldo en TON para fee (+0.1 extra)</li>
+    <li>Para depositar, debes incluir tu <b>memo ID</b></li>
+    <li>Para retirar, necesitas mínimo <b>0.1 TON</b> para comisión de red</li>
+    <li>No hay montos mínimos ni autorizaciones externas</li>
+    <li>Todo queda registrado públicamente para transparencia</li>
   </ul>
 
-  <h2 id="comandos">📋 Comandos disponibles</h2>
+  <h2 id="referidos">👥 Sistema de referidos</h2>
   <ul>
-    <li><code>hh 3 hcash @usuario</code> → Envía HCASH</li>
-    <li><code>hh 2 ton</code> → Envía TON (al responder mensaje)</li>
-    <li><code>mywallet</code> → Mostrar perfil</li>
-    <li><code>hh ref</code> → Obtener tu link de referido</li>
-    <li><code>start</code> o <code>/start</code> → Ver menú</li>
-  </ul>
-
-  <h2 id="referidos">🎁 Sistema de referidos</h2>
-  <ul>
-    <li>Usa <code>hh ref</code> para obtener tu link</li>
-    <li>Ganas <b>0.25 HCASH</b> si tu referido publica una tarea</li>
+    <li>Invita usando <code>hh ref</code> y obtén tu enlace</li>
+    <li>Recibes <b>0.25 HCASH</b> si tu referido crea una tarea</li>
     <li>Ganas <b>0.02 TON</b> cada vez que retira</li>
-    <li>Las ganancias se suman a tu balance</li>
+    <li>Las estadísticas aparecen en tu perfil</li>
   </ul>
 
-  <h2 id="soporte">🆘 Soporte directo</h2>
+  <h2 id="soporte">📬 Soporte directo</h2>
+  <p>Desde el menú principal, elige <b>Soporte</b> y escribe tu mensaje. El equipo te responderá directamente desde el grupo oficial, sin formularios ni espera.</p>
+  <p>Las respuestas aparecerán dentro del bot, con opción a volver a contactar si lo necesitas.</p>
+
+  <h2 id="especial">💡 ¿Qué hace especial a HWallet?</h2>
   <ul>
-    <li>Desde el menú, presiona <b>Soporte</b></li>
-    <li>Envía tu mensaje directamente al equipo</li>
-    <li>Recibirás una respuesta personalizada desde el bot</li>
-    <li>El historial se guarda para futuras referencias</li>
+    <li>✅ Descentralizado, sin intermediarios</li>
+    <li>🔒 Respaldo garantizado para tareas</li>
+    <li>🤖 Verificación automática de acciones</li>
+    <li>📜 Registro de transacciones e interacciones</li>
+    <li>🧠 Control total del usuario</li>
+    <li>📈 Tráfico orgánico, sin bots</li>
+    <li>📦 Sin límites de uso</li>
+    <li>🔗 Integración total con blockchain</li>
   </ul>
 
-  <p style="margin-top:2rem; color:#00ffe7; font-style:italic">🌌 Gracias por ser parte del futuro del comercio digital. El universo Space Hunters apenas comienza...</p>
+  <h2 id="futuro">🚀 ¿Qué sigue?</h2>
+  <p>Muy pronto lanzaremos la <b>app oficial</b> integrada con el universo Space Hunters. HWallet será el motor económico de un nuevo sistema descentralizado, social y transparente.</p>
+
+  <p style="margin-top:2rem;">🌌 <i>Gracias por formar parte del futuro del comercio digital.</i></p>
 
 </body>
 </html>
+
