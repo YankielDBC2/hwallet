@@ -6,27 +6,6 @@
   <title>Guía de HWallet</title>
   <style>
     body {
-<h2 id="conectar">🔗 Conectar Wallet</h2>
-<p>Puedes conectar tu wallet TON (ej. Tonkeeper, Tonhub) a HWallet y empezar a retirar sin custodia:</p>
-<p><b>Solo firma el mensaje:</b> <code>Conectar mi wallet a HWallet</code></p>
-<div id="ton-connect-button"></div>
-
-<script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
-<script>
-  const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
-    manifestUrl: "https://raw.githubusercontent.com/YankielDBC2/hwallet/main/tonmanifest.json",
-    buttonRootId: "ton-connect-button"
-  });
-
-  tonConnectUI.onStatusChange(async (walletInfo) => {
-    if (walletInfo?.account?.address) {
-      const address = walletInfo.account.address;
-      const telegramUrl = `https://t.me/myhunterwalletbot?start=wallet_${address}`;
-      window.location.href = telegramUrl;
-    }
-  });
-</script>
-      
       background-color: #0B1224;
       color: white;
       font-family: 'Segoe UI', sans-serif;
@@ -70,27 +49,6 @@
       margin-bottom: 2rem;
     }
     nav ul {
-      <h2 id="conectar">🔗 Conectar Wallet</h2>
-<p>Puedes conectar tu wallet TON (ej. Tonkeeper, Tonhub) a HWallet y empezar a retirar sin custodia:</p>
-<p><b>Solo firma el mensaje:</b> <code>Conectar mi wallet a HWallet</code></p>
-<div id="ton-connect-button"></div>
-
-<script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
-<script>
-  const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
-    manifestUrl: "https://raw.githubusercontent.com/YankielDBC2/hwallet/main/tonmanifest.json",
-    buttonRootId: "ton-connect-button"
-  });
-
-  tonConnectUI.onStatusChange(async (walletInfo) => {
-    if (walletInfo?.account?.address) {
-      const address = walletInfo.account.address;
-      const telegramUrl = `https://t.me/myhunterwalletbot?start=wallet_${address}`;
-      window.location.href = telegramUrl;
-    }
-  });
-</script>
-
       list-style: none;
       padding: 0;
     }
@@ -206,6 +164,5 @@
   <p>Se acerca el lanzamiento de la app oficial de HWallet, conectada al mundo de Space Hunters. Será el núcleo económico de tareas, misiones y comercio real descentralizado.</p>
 
   <p style="margin-top:2rem;">🌌 <i>Gracias por formar parte del futuro del comercio sin fronteras.</i></p>
-
 </body>
 </html>
