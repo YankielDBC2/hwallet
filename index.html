@@ -1,35 +1,41 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Conectar Wallet – HWallet</title>
-  <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Conectar Wallet - HWallet</title>
   <style>
     body {
-      font-family: sans-serif;
+      background-color: #0B1224;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
       text-align: center;
       padding: 2rem;
     }
-    button {
-      font-size: 1.2rem;
-      padding: 1rem 2rem;
-      border: none;
-      background-color: #0088cc;
-      color: white;
-      border-radius: 8px;
-      cursor: pointer;
+    h1 {
+      color: #00ffa2;
+    }
+    p {
+      color: #ccc;
+    }
+    #ton-connect-button {
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
-  <h2>🔗 Conectar tu Wallet a HWallet</h2>
-  <p>Se abrirá tu wallet para firmar el mensaje:</p>
-  <p><code>Conectar mi wallet a HWallet</code></p>
-  <br>
- <center></center> <div id="ton-connect-button"></div></center>
+  <h1>🔗 Conecta tu Wallet</h1>
+  <p>Usa Tonkeeper o Tonhub para firmar tu cuenta con HWallet.</p>
+  <p><b>Mensaje a firmar:</b> <code>Conectar mi wallet a HWallet</code></p>
+  <div id="ton-connect-button"></div>
 
+  <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
   <script>
     const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
       manifestUrl: "https://raw.githubusercontent.com/YankielDBC2/hwallet/main/tonmanifest.json",
@@ -39,8 +45,19 @@
     tonConnectUI.onStatusChange(async (walletInfo) => {
       if (walletInfo?.account?.address) {
         const address = walletInfo.account.address;
-        const telegramUrl = `https://t.me/myhunterwalletbot?start=wallet_${address}`;
-        window.location.href = telegramUrl;
+        const userId = window.location.href.split("wallet_")[1];
+
+        try {
+          await fetch("https://TU_DOMINIO.com/wallet_connected", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ wallet: address, user_id: userId })
+          });
+        } catch (error) {
+          console.error("Error al registrar la wallet:", error);
+        }
+
+        window.location.href = `https://t.me/myhunterwalletbot`;
       }
     });
   </script>
